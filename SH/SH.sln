@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SH", "SH\SH.csproj", "{7585231C-EF9F-4D0B-B23F-FADE2DA10C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ted.SH", "Ted.SH\Ted.SH.csproj", "{23644FC8-E34A-4998-98AE-87AEE5CA0AE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7585231C-EF9F-4D0B-B23F-FADE2DA10C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7585231C-EF9F-4D0B-B23F-FADE2DA10C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7585231C-EF9F-4D0B-B23F-FADE2DA10C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7585231C-EF9F-4D0B-B23F-FADE2DA10C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23644FC8-E34A-4998-98AE-87AEE5CA0AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23644FC8-E34A-4998-98AE-87AEE5CA0AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23644FC8-E34A-4998-98AE-87AEE5CA0AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23644FC8-E34A-4998-98AE-87AEE5CA0AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
