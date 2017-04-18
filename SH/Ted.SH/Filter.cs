@@ -7,35 +7,61 @@ using System.Text.RegularExpressions;
 
 namespace Ted.SH
 {
-    public abstract class Filter
+    public abstract class TokenFilterBase
     {
-        public abstract bool IsMatch(string str);
+        public TokenFilterBase(int code, string text)
+        {
+            Code = code;
+            Text = text;
+        }
+
+        public int Code { get; set; }
+
+        public string Text { get; set; }
+
+        public abstract bool IsMatchItem(string str);
+        public abstract bool IsPotentialMatchItem(string str);
     }
 
-    public class RegexFilter : Filter
+    public class RegexTokenFilter : TokenFilterBase
     {
-        private const string SEPARATOR = @"[\s\t\r\n;]*";
         private Regex _regex;
 
         public int Code { get; private set; }
 
-        public RegexFilter(string regex, int code)
+        public RegexTokenFilter(string regex, int code, string text) 
+            : base(code, text)
         {
-            Code = code;
-            _regex = new Regex(SEPARATOR + regex + SEPARATOR, RegexOptions.Compiled);
+            _regex = new Regex(regex , RegexOptions.Compiled);
         }
 
-        public override bool IsMatch(string str)
+        public override bool IsMatchItem(string str)
+        {
+            return _regex.IsMatch(str);
+        }
+        public override bool IsPotentialMatchItem(string str)
         {
             return _regex.IsMatch(str);
         }
     }
 
-    public class CommonFilter :Filter
+    public class StaticTokenFilter : TokenFilterBase
     {
-        public override bool IsMatch(string str)
+        private string _str;
+
+        public StaticTokenFilter(string str, int code, string text)
+            : base(code, text)
         {
- 	        throw new NotImplementedException();
+            _str = str;
+        }
+
+        public override bool IsMatchItem(string str)
+        {
+            return str == _str;
+        }
+        public override bool IsPotentialMatchItem(string str)
+        {
+            return _str.StartsWith(str);
         }
     }
 

@@ -1,34 +1,35 @@
-﻿#identity
-[a-zA-Z]	1
-
-#int
-\d{1,9}	2
-
-
-#string
-#("")|(".*[^\]?")	3
+﻿#NAME	static/regex	SYMBOL	CODE
 
 #key word
-var	10
-#function	11
-#null	12
+var	static	var	10
+function	static	function	11
+null	static	null	12
 
-#{	50
-#}	51
-#[	52
-#]	53
-#(	54
-#)	55
-=	56
-#+	57
-#-	58
-#*	59
-#/	60
-#.	61
-;	62
-#&	63
-#|	64
-#!	65
-#||	66
-#&&	67
-#==	68
+
+IDENTITY	regex	^[a-zA-Z]+$	1
+
+INT	regex	^\d{1,9}$	2
+
+#STRING	regex	("")|(".*[^\]?")	3
+
+
+
+{	static	{	50
+}	static	}	51
+[	static	[	52
+]	static	]	53
+(	static	(	54
+)	static	)	55
+=	static	=	56
++	static	+	57
+-	static	-	58
+*	static	*	59
+/	static	/	60
+.	static	.	61
+;	static	;	62
+&	static	&	63
+|	static	|	64
+NOT	static	!	65
+OR	static	||	66
+AND	static	&&	67
+EQUAL	static	==	68
